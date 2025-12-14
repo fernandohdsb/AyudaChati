@@ -44,7 +44,8 @@
         </VBox>
 
 
-        <Button text="Añadir"
+        <Button fx:id="btnRegistrar"
+                text="Añadir"
                 maxWidth="Infinity" maxHeight="Infinity" VBox.vgrow="ALWAYS"
                 styleClass="button"/>
 
