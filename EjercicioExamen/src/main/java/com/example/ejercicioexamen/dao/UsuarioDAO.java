@@ -8,4 +8,5 @@ import java.util.ArrayList;
 public interface UsuarioDAO {
     void addUsuario(Usuario usuario) throws SQLException;
 
+    Usuario comprobarUsuario(String correo, String password) throws SQLException;
 }
