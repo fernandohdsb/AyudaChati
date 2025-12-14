@@ -1,0 +1,28 @@
+
+.product-card {
+    -fx-background-color: white;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 5, 0, 0, 0);
+    -fx-background-radius: 8px;
+    -fx-border-radius: 8px;
+    -fx-border-color: #e0e0e0;
+    -fx-padding: 10px;
+    -fx-alignment: CENTER;
+}
+
+.product-card:hover {
+    -fx-effect: dropshadow(three-pass-box, rgba(0,123,255,0.3), 8, 0, 0, 0);
+    -fx-cursor: hand;
+}
+
+
+.sidebar {
+    -fx-background-color: #ffffff;
+    -fx-border-color: transparent transparent transparent #dddddd;
+    -fx-padding: 15px;
+}
+
+.label-price {
+    -fx-text-fill: #007bff;
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+}
