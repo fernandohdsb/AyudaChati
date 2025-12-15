@@ -49,15 +49,18 @@
             -->
             <VBox spacing="10.0" VBox.vgrow="ALWAYS">
 
-                <Button text="Añadir al Carrito"
+                <Button fx:id="botonAñadir"
+                        text="Añadir al Carrito"
                         maxWidth="Infinity" maxHeight="Infinity" VBox.vgrow="ALWAYS"
                         styleClass="button" />
 
-                <Button text="Ver Carrito"
+                <Button fx:id="botonVer"
+                        text="Ver Carrito"
                         maxWidth="Infinity" maxHeight="Infinity" VBox.vgrow="ALWAYS"
                         styleClass="button" />
 
-                <Button text="Vaciar Carrito"
+                <Button fx:id="botonVaciar"
+                        text="Vaciar Carrito"
                         maxWidth="Infinity" maxHeight="Infinity" VBox.vgrow="ALWAYS"
                         styleClass="button, button-danger"/>
 

@@ -30,25 +30,24 @@ public class LoginController implements Initializable {
     public Button botonRegistrarse;
 
     @FXML
-    private TextField txtUsuario; // Campo para el correo
+    private TextField txtUsuario;
 
     @FXML
-    private PasswordField txtPassword; // Campo para la contraseña
+    private PasswordField txtPassword;
 
     private UsuarioDAO usuarioDAO;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        // Inicializar el DAO
         usuarioDAO = new UsuarioDAOImp();
 
         botonRegistrarse.setOnAction(event -> {
             try {
-                // Navegación para el registro
+
                 FXMLLoader loader = new FXMLLoader(HelloApplication.class.getResource("form-view.fxml"));
                 Parent root = loader.load();
 
-                // FormController formController = loader.getController();
+
 
                 Stage ventanaRegistro = new Stage();
                 ventanaRegistro.initModality(Modality.APPLICATION_MODAL);
@@ -77,17 +76,13 @@ public class LoginController implements Initializable {
             System.out.println("Intentando iniciar sesión con: " + correo);
 
             try {
-                // 1. Lógica para comprobar el usuario en la base de datos
                 Usuario usuarioLogueado = usuarioDAO.comprobarUsuario(correo, pass);
 
                 if (usuarioLogueado != null) {
-                    // LOGIN EXITOSO
 
-                    // 2. Navegar a la vista principal
                     cargarVistaPrincipal(event, usuarioLogueado);
 
                 } else {
-                    // LOGIN FALLIDO
                     Alert alert = new Alert(Alert.AlertType.ERROR);
                     alert.setContentText("Credenciales incorrectas. Verifica tu correo y contraseña.");
                     alert.setTitle("Error de Autenticación");
@@ -95,14 +90,14 @@ public class LoginController implements Initializable {
                 }
 
             } catch (SQLException e) {
-                // Error de BD
+
                 Alert alert = new Alert(Alert.AlertType.ERROR);
                 alert.setContentText("Error de conexión con la base de datos: " + e.getMessage());
                 alert.setTitle("Error de Sistema");
                 alert.show();
                 e.printStackTrace();
             } catch (IOException e) {
-                // Error al cargar la siguiente vista
+
                 Alert alert = new Alert(Alert.AlertType.ERROR);
                 alert.setContentText("Error al cargar la vista principal.");
                 alert.setTitle("Error de Interfaz");
@@ -111,23 +106,16 @@ public class LoginController implements Initializable {
         }
     }
 
-    /**
-     * Carga la vista principal (main-view.fxml) y pasa el objeto Usuario al MainController.
-     */
+
     private void cargarVistaPrincipal(ActionEvent event, Usuario usuarioLogueado) throws IOException {
-        // Obtenemos la Stage actual a partir del evento
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 
-        // Cargamos el nuevo FXML
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("main-view.fxml"));
         Parent root = fxmlLoader.load();
 
-        // Pasamos el usuario logueado al MainController
         MainController mainController = fxmlLoader.getController();
-        // ESTA FUNCIÓN DEBE EXISTIR EN MainController
         mainController.setUsuarioLogueado(usuarioLogueado);
 
-        // Configuramos y mostramos la nueva escena
         stage.setTitle("Vista Principal de Compras");
         stage.setScene(new Scene(root));
         stage.show();

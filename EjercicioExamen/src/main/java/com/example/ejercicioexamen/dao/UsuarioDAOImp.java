@@ -13,16 +13,13 @@ import java.util.ArrayList;
 public class UsuarioDAOImp implements UsuarioDAO {
     private Connection connection;
     private PreparedStatement preparedStatement;
-    private ResultSet resulSet; // Variable para almacenar los resultados de la consulta
+    private ResultSet resulSet;
 
-    /**
-     * Implementación del método de registro (añadir usuario).
-     */
+
     @Override
     public void addUsuario(Usuario usuario) throws SQLException {
         connection = DBconnection.getConnection();
 
-        // Query: INSERT INTO users (name, mail, pass) VALUES (?,?,?)
         String query = String.format("INSERT INTO %s (%s,%s,%s) VALUES (?,?,?)",
                 SchemaDB.TAB_USERS, SchemaDB.COL_NAME, SchemaDB.COL_CORREO, SchemaDB.COL_PASS);
 
@@ -36,30 +33,37 @@ public class UsuarioDAOImp implements UsuarioDAO {
         } catch (SQLException e) {
             throw new SQLException("Error al registrar el usuario: " + e.getMessage(), e);
         } finally {
-            // Cierre de recursos
             if (preparedStatement != null) preparedStatement.close();
             if (connection != null) connection.close();
         }
     }
 
-    /**
-     * Implementación del método de autenticación (comprobarUsuario).
-     * @param correo El correo electrónico del usuario.
-     * @param password La contraseña del usuario.
-     * @return El objeto Usuario si las credenciales son correctas, o null si no lo son.
-     */
+
+    // EN UsuarioDAOImp.java
+
     @Override
     public Usuario comprobarUsuario(String correo, String password) throws SQLException {
         Usuario usuario = null;
-        connection = DBconnection.getConnection();
+        // 1. Obtener la conexión (si es nula, se recrea con la URL corregida)
+        Connection connection = DBconnection.getConnection();
+
+        // Si la conexión falló (connection == null), no podemos continuar
+        if (connection == null) {
+            System.err.println("Fallo al obtener la conexión en comprobarUsuario.");
+            return null;
+        }
 
         String query = String.format("SELECT * FROM %s WHERE %s = ? AND %s = ?",
                 SchemaDB.TAB_USERS, SchemaDB.COL_CORREO, SchemaDB.COL_PASS);
 
+        PreparedStatement preparedStatement = null;
+        ResultSet resulSet = null;
+
         try {
             preparedStatement = connection.prepareStatement(query);
-            preparedStatement.setString(1, correo);
-            preparedStatement.setString(2, password);
+
+            preparedStatement.setString(1, correo.trim());
+            preparedStatement.setString(2, password.trim());
 
             resulSet = preparedStatement.executeQuery();
 
@@ -69,16 +73,15 @@ public class UsuarioDAOImp implements UsuarioDAO {
                 String mail = resulSet.getString(SchemaDB.COL_CORREO);
                 String pass = resulSet.getString(SchemaDB.COL_PASS);
 
-                usuario = new Usuario( nombre, mail, pass);
+                usuario = new Usuario(nombre, mail, pass);
             }
 
         } catch (SQLException e) {
             System.err.println("Error en la autenticación (comprobarUsuario): " + e.getMessage());
-            throw e;
         } finally {
+
             if (resulSet != null) resulSet.close();
             if (preparedStatement != null) preparedStatement.close();
-            if (connection != null) connection.close();
         }
 
         return usuario;
