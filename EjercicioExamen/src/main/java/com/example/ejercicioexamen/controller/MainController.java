@@ -32,7 +32,7 @@ public class MainController  implements Initializable {
     }
 
     private void acciones() {
-        botonAñadir.setOnAction(new EventHandler<ActionEvent>() {
+        botonAniadir.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
 
