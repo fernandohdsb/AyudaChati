@@ -2,6 +2,9 @@ package com.example.ejercicioexamen.controller;
 
 import com.example.ejercicioexamen.model.ProductoJSON;
 import com.example.ejercicioexamen.model.Usuario;
+import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
@@ -13,10 +16,11 @@ import java.util.ResourceBundle;
 public class MainController  implements Initializable {
 
     @FXML
-    public Button botonAñadir,botonVaciar,botonVer;
+    public Button botonAniadir,botonVaciar,botonVer;
     private Usuario loggedUser;
     @FXML
-    private ListView<Producto> listViewProductos;
+    private ListView<ProductoJSON> listViewProductos;
+    private ObservableList<ProductoJSON> lista;
 
 
     @Override
@@ -28,6 +32,24 @@ public class MainController  implements Initializable {
     }
 
     private void acciones() {
+        botonAñadir.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+
+            }
+        });
+        botonVaciar.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+
+            }
+        });
+        botonVer.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+
+            }
+        });
     }
 
     private void initGUI() {

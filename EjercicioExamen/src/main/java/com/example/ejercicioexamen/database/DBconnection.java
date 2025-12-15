@@ -17,7 +17,7 @@ public class DBconnection {
     }
 
 
-    private static void createConnection(){
+    public static void createConnection(){
 
         String url = "jdbc:mysql://localhost:3306/tienda_ret?allowPublicKeyRetrieval=true&useSSL=false";
 

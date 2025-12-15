@@ -11,9 +11,8 @@ module com.example.ejercicioexamen {
     requires eu.hansolo.tilesfx;
     requires com.almasb.fxgl.all;
     requires lombok;
+    requires com.fasterxml.jackson.databind;
     requires java.sql;
-    requires java.desktop;
-    requires com.fasterxml.jackson.annotation;
 
     opens  com.example.ejercicioexamen.model to lombok;
     exports com.example.ejercicioexamen.model;

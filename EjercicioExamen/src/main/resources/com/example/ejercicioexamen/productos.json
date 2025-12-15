@@ -1,0 +1,154 @@
+{
+  "productos": [
+    {
+      "id": 1,
+      "nombre": "Cafetera Express Automática",
+      "precio": 249.99
+    },
+    {
+      "id": 2,
+      "nombre": "Teclado Mecánico RGB",
+      "precio": 85.50
+    },
+    {
+      "id": 3,
+      "nombre": "Monitor Curvo 27 pulgadas 144Hz",
+      "precio": 319.00
+    },
+    {
+      "id": 4,
+      "nombre": "Disco Duro SSD 1TB",
+      "precio": 65.99
+    },
+    {
+      "id": 5,
+      "nombre": "Silla de Oficina Ergonómica",
+      "precio": 145.75
+    },
+    {
+      "id": 6,
+      "nombre": "Auriculares Inalámbricos Noise Cancelling",
+      "precio": 129.50
+    },
+    {
+      "id": 7,
+      "nombre": "Licuadora de Alta Potencia",
+      "precio": 79.99
+    },
+    {
+      "id": 8,
+      "nombre": "Robot Aspirador con Mapeo Láser",
+      "precio": 350.00
+    },
+    {
+      "id": 9,
+      "nombre": "Kit de Iluminación LED Inteligente",
+      "precio": 45.20
+    },
+    {
+      "id": 10,
+      "nombre": "Router WiFi 6 de Doble Banda",
+      "precio": 99.95
+    },
+    {
+      "id": 11,
+      "nombre": "Cámara Web Full HD 1080p",
+      "precio": 32.80
+    },
+    {
+      "id": 12,
+      "nombre": "Altavoz Bluetooth Portátil Resistente",
+      "precio": 55.49
+    },
+    {
+      "id": 13,
+      "nombre": "Batería Externa 20000mAh",
+      "precio": 29.99
+    },
+    {
+      "id": 14,
+      "nombre": "Mesa de Centro Elevable",
+      "precio": 110.00
+    },
+    {
+      "id": 15,
+      "nombre": "Juego de Sartenes Antiadherentes (3 uds)",
+      "precio": 59.90
+    },
+    {
+      "id": 16,
+      "nombre": "Gafas de Realidad Virtual VR",
+      "precio": 450.00
+    },
+    {
+      "id": 17,
+      "nombre": "Impresora Multifunción Tinta",
+      "precio": 95.50
+    },
+    {
+      "id": 18,
+      "nombre": "Smartwatch Deportivo con GPS",
+      "precio": 189.99
+    },
+    {
+      "id": 19,
+      "nombre": "Estantería Modular de Madera",
+      "precio": 68.75
+    },
+    {
+      "id": 20,
+      "nombre": "Termo Inteligente Acero Inoxidable",
+      "precio": 24.95
+    },
+    {
+      "id": 21,
+      "nombre": "Tarjeta Gráfica RTX 4060",
+      "precio": 415.00
+    },
+    {
+      "id": 22,
+      "nombre": "Webcam para Streaming",
+      "precio": 75.99
+    },
+    {
+      "id": 23,
+      "nombre": "Mouse Vertical Ergonómico",
+      "precio": 19.99
+    },
+    {
+      "id": 24,
+      "nombre": "Kit Herramientas de Precisión",
+      "precio": 40.50
+    },
+    {
+      "id": 25,
+      "nombre": "Tableta Gráfica Digitalizadora",
+      "precio": 115.00
+    },
+    {
+      "id": 26,
+      "nombre": "Ventilador de Torre Silencioso",
+      "precio": 62.90
+    },
+    {
+      "id": 27,
+      "nombre": "Cepillo de Dientes Eléctrico Sónico",
+      "precio": 49.99
+    },
+    {
+      "id": 28,
+      "nombre": "Set de Cuchillos de Chef (5 uds)",
+      "precio": 88.00
+    },
+    {
+      "id": 29,
+      "nombre": "Memoria RAM DDR4 32GB (2x16GB)",
+      "precio": 79.99
+    },
+    {
+      "id": 30,
+      "nombre": "Tostadora de Ranura Larga",
+      "precio": 35.50
+    }
+  ]
+}
